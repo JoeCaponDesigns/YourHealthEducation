@@ -11,7 +11,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img
-            src="/home-logo.png"
+            src={`${import.meta.env.BASE_URL}home-logo.png`}
             alt="Your Health Education"
             className="h-12 w-auto"
             loading="eager"

@@ -69,7 +69,7 @@ const handleBuyNow = () => {
               {/* Image */}
               <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={course.image || "/placeholder.svg"}
+                  src={`${import.meta.env.BASE_URL}${course.image}`}
                   alt={course.title}
                   className="h-full w-full object-cover"
                   loading="eager"
