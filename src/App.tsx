@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/HeroSection"
 import { MissionSection } from "@/components/MissionSection"
@@ -27,15 +27,18 @@ function App() {
     <main className="min-h-screen font-sans antialiased">
       <Navigation />
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/courses" element={<CoursesPage />} />
-         <Route path="/courses/:slug" element={<CourseDetailPage />} />
-         <Route path="/ContactPage" element={<ContactPage />} />
-         <Route path ="/CartPage" element={<CartPage />} />
-         <Route path ="/CheckoutPage" element={<CheckoutPage />} />
-      </Routes>
+    <Routes>
+  <Route path="/" element={<Navigate to="/home" replace />} />
+
+  <Route path="/home" element={<HomePage />} />
+  <Route path="/about" element={<AboutPage />} />
+  <Route path="/courses" element={<CoursesPage />} />
+  <Route path="/courses/:slug" element={<CourseDetailPage />} />
+  <Route path="/contact" element={<ContactPage />} />
+  <Route path="/cart" element={<CartPage />} />
+  <Route path="/checkout" element={<CheckoutPage />} />
+</Routes>
+
     </main>
   )
 }
