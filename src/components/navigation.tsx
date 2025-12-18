@@ -31,7 +31,7 @@ export function Navigation() {
             Courses
           </Link>
 
-          <Link to="/ContactPage" className="text-foreground hover:text-primary font-medium transition-colors">
+          <Link to="/contact" className="text-foreground hover:text-primary font-medium transition-colors">
             Contact
           </Link>
 
