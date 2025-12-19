@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { useCart } from "@/lib/cart-context"
 import { OrderSummary } from "@/components/OrderSummary"
 import { usePageFocus } from "@/hooks/usePageFocus"
+import { Helmet } from "react-helmet-async"
 
 export function CheckoutPage() {
   usePageFocus()
@@ -55,6 +56,28 @@ export function CheckoutPage() {
     return (
       <>
         <main className="min-h-screen py-16 md:py-24">
+
+<Helmet>
+  <title>Checkout | Your Health Education</title>
+
+  <meta
+    name="description"
+    content="Secure checkout for your selected Your Health Education courses."
+  />
+
+  <link
+    rel="canonical"
+    href="https://joeeeeca.github.io/Your-Health-Education/#/checkout"
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Checkout | Your Health Education" />
+  <meta
+    property="og:description"
+    content="Secure checkout for your selected Your Health Education courses."
+  />
+</Helmet>
+
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center space-y-6">
               <ShoppingBag className="h-24 w-24 mx-auto text-muted-foreground/50" />
