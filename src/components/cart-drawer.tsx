@@ -19,12 +19,21 @@ export function CartDrawer() {
   }, [isDrawerOpen])
 
   return (
-    <div
-      className={`fixed right-0 top-0 h-full bg-background border-l border-border shadow-2xl z-50 transition-transform duration-300 ease-in-out w-96 ${
-        isDrawerOpen ? "translate-x-0" : "translate-x-full"
-      }`}
-      aria-hidden={!isDrawerOpen}
-    >
+   <div
+  className={`
+    fixed top-0 z-50 h-full bg-background border-border shadow-2xl
+    transition-transform duration-300 ease-in-out
+
+    /* Mobile */
+    left-1/2 -translate-x-1/2 w-[95%] max-w-md border rounded-xl
+
+    /* Desktop */
+    md:left-auto md:right-0 md:translate-x-0 md:w-96 md:border-l md:rounded-none
+
+    ${isDrawerOpen ? "translate-y-0" : "translate-y-full md:translate-x-full"}
+  `}
+  aria-hidden={!isDrawerOpen}
+>
       <div className="flex flex-col h-full">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border">

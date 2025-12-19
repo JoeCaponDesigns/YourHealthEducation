@@ -66,7 +66,7 @@ export function CourseDetailPage() {
       { openDrawer: false }
     )
 
-    navigate("/CheckoutPage")
+    navigate("/checkout")
   }
 
   /* ---------- MAIN PAGE ---------- */

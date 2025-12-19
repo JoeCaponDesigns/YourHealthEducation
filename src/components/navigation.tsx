@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { ShoppingCart, Menu, X } from "lucide-react"
 import { useCart } from "../lib/cart-context" // adjust path if needed
 import { useState } from "react"
@@ -13,7 +13,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 py-4">
         {/* Desktop */}
         <div className="hidden md:flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+          <NavLink to="/" className="flex items-center">
             <img
               src={`${import.meta.env.BASE_URL}home-logo.png`}
               alt="Your Health Education"
@@ -21,30 +21,68 @@ export function Navigation() {
               height={60}
               className="h-12 w-auto"
             />
-          </Link>
+          </NavLink>
 
           <div className="flex gap-8 items-center">
-            <Link to="/" className="text-foreground hover:text-primary font-medium transition-colors">
+           <NavLink
+  to="/home"
+  className={({ isActive }) =>
+    `relative font-medium transition-colors
+     ${
+       isActive
+         ? "text-primary"
+         : "text-foreground hover:text-primary"
+     }`
+  }
+>
               Home
-            </Link>
-            <Link to="/about" className="text-foreground hover:text-primary font-medium transition-colors">
+            </NavLink>
+            <NavLink to="/about" className={({ isActive }) =>
+    `relative font-medium transition-colors
+     ${
+       isActive
+         ? "text-primary"
+         : "text-foreground hover:text-primary"
+     }`
+  }>
               About
-            </Link>
-            <Link to="/courses" className="text-foreground hover:text-primary font-medium transition-colors">
+            </NavLink>
+            <NavLink to="/courses" className={({ isActive }) =>
+    `relative font-medium transition-colors
+     ${
+       isActive
+         ? "text-primary"
+         : "text-foreground hover:text-primary"
+     }`
+  }>
               Courses
-            </Link>
-            <Link to="/contact" className="text-foreground hover:text-primary font-medium transition-colors">
+            </NavLink>
+            <NavLink to="/contact" className={({ isActive }) =>
+    `relative font-medium transition-colors
+     ${
+       isActive
+         ? "text-primary"
+         : "text-foreground hover:text-primary"
+     }`
+  }>
               Contact
-            </Link>
+            </NavLink>
 
-            <Link to="/cart" className="relative text-foreground hover:text-primary transition-colors">
+            <NavLink to="/cart" className={({ isActive }) =>
+    `relative font-medium transition-colors
+     ${
+       isActive
+         ? "text-primary"
+         : "text-foreground hover:text-primary"
+     }`
+  }>
               <ShoppingCart className="h-6 w-6" />
               {itemCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
-            </Link>
+            </NavLink>
           </div>
         </div>
 
@@ -58,7 +96,7 @@ export function Navigation() {
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
 
-          <Link to="/" className="flex items-center">
+          <NavLink to="/" className="flex items-center">
             <img
               src={`${import.meta.env.BASE_URL}home-logo.png`}
               alt="Your Health Education"
@@ -66,16 +104,16 @@ export function Navigation() {
               height={45}
               className="h-10 w-auto"
             />
-          </Link>
+          </NavLink>
 
-          <Link to="/cart" className="relative text-foreground hover:text-primary transition-colors p-2">
+          <NavLink to="/cart" className="relative text-foreground hover:text-primary transition-colors p-2">
             <ShoppingCart className="h-6 w-6" />
             {itemCount > 0 && (
               <span className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                 {itemCount}
               </span>
             )}
-          </Link>
+          </NavLink>
         </div>
       </div>
 
@@ -98,14 +136,14 @@ export function Navigation() {
 >
   <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
     {["/", "/about", "/courses", "/contact"].map((path, i) => (
-      <Link
+      <NavLink
         key={path}
         to={path}
         className="text-foreground hover:text-primary font-medium transition-colors py-2 text-lg"
         onClick={() => setMobileMenuOpen(false)}
       >
         {["Home", "About", "Courses", "Contact"][i]}
-      </Link>
+      </NavLink>
     ))}
   </div>
 </div>
