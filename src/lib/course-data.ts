@@ -13,7 +13,7 @@ export const courses: Course[] = [
     slug: "diet-coach",
     title: "How to be Your Own Diet Coach",
     price: 1000,
-    image: "/nutrition-coaching-course-healthy-meal-planning.jpg",
+    image: "public/b-y-g-SaN6XB1DrJk-unsplash.jpg",
     description: "Fast track your nutrition from Beginner to Master with comprehensive diet coaching education.",
     features: [
       "Fast track your nutrition from Beginner to Master",

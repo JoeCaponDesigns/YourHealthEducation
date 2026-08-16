@@ -6,7 +6,7 @@ export function AboutPage() {
   usePageFocus()
   
   return (
-    <main className="min-h-screen">
+    <main className="min-h-[calc(100vh-4rem)] flex flex-col">
       <Helmet>
   <title>About Brad Salter | Your Health Education</title>
 
@@ -32,7 +32,7 @@ export function AboutPage() {
   />
 </Helmet>
 
-      <section className="py-20 px-4">
+      <section className="flex-1 py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image Section */}
